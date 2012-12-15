@@ -1,0 +1,9 @@
+src\common\net\minecraftforge\liquids\LiquidTank.java:48: warning: [deprecation] setCapacity(int) in net.minecraftforge.liquids.ILiquidTank has been deprecated
+	public void setCapacity(int capacity) {
+	            ^
+src\common\net\minecraftforge\liquids\LiquidTank.java:43: warning: [deprecation] setLiquid(net.minecraftforge.liquids.LiquidStack) in net.minecraftforge.liquids.ILiquidTank has been deprecated
+	public void setLiquid(LiquidStack liquid) {
+	            ^
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+2 warnings
