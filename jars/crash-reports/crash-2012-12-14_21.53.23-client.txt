@@ -1,0 +1,69 @@
+---- Minecraft Crash Report ----
+// Quite honestly, I wouldn't worry myself about that.
+
+Time: 12/14/12 9:53 PM
+Description: Failed to start game
+
+java.lang.StringIndexOutOfBoundsException: String index out of range: 7
+	at java.lang.String.charAt(Unknown Source)
+	at net.minecraft.src.CraftingManager.addRecipe(CraftingManager.java:192)
+	at cpw.mods.fml.common.registry.GameRegistry.addRecipe(GameRegistry.java:196)
+	at nightmareRealm.common.nightmareRealm.init(nightmareRealm.java:91)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at cpw.mods.fml.common.FMLModContainer.handleModStateEvent(FMLModContainer.java:440)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.google.common.eventbus.EventHandler.handleEvent(EventHandler.java:69)
+	at com.google.common.eventbus.SynchronizedEventHandler.handleEvent(SynchronizedEventHandler.java:45)
+	at com.google.common.eventbus.EventBus.dispatch(EventBus.java:317)
+	at com.google.common.eventbus.EventBus.dispatchQueuedEvents(EventBus.java:300)
+	at com.google.common.eventbus.EventBus.post(EventBus.java:268)
+	at cpw.mods.fml.common.LoadController.propogateStateMessage(LoadController.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.google.common.eventbus.EventHandler.handleEvent(EventHandler.java:69)
+	at com.google.common.eventbus.SynchronizedEventHandler.handleEvent(SynchronizedEventHandler.java:45)
+	at com.google.common.eventbus.EventBus.dispatch(EventBus.java:317)
+	at com.google.common.eventbus.EventBus.dispatchQueuedEvents(EventBus.java:300)
+	at com.google.common.eventbus.EventBus.post(EventBus.java:268)
+	at cpw.mods.fml.common.LoadController.distributeStateMessage(LoadController.java:83)
+	at cpw.mods.fml.common.Loader.initializeMods(Loader.java:651)
+	at cpw.mods.fml.client.FMLClientHandler.finishMinecraftLoading(FMLClientHandler.java:197)
+	at net.minecraft.client.Minecraft.startGame(Minecraft.java:469)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:756)
+	at java.lang.Thread.run(Unknown Source)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.4.5
+	Operating System: Windows 7 (amd64) version 6.1
+	Java Version: 1.7.0_05, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 898335080 bytes (856 MB) / 1056309248 bytes (1007 MB) up to 1056309248 bytes (1007 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Suspicious classes: FML and Forge are installed
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP v7.23 FML v4.5.2.459 Minecraft Forge 6.4.1.411 4 mods loaded, 4 mods active
+	mcp [Minecraft Coder Pack] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized
+	FML [Forge Mod Loader] (coremods) Unloaded->Constructed->Pre-initialized->Initialized
+	Forge [Minecraft Forge] (coremods) Unloaded->Constructed->Pre-initialized->Initialized
+	Nightmare Realm [Nightmare Realm] (bin) Unloaded->Constructed->Pre-initialized->Errored
+	LWJGL: 2.4.2
+	OpenGL: GeForce GTX 460/PCIe/SSE2 GL version 4.2.0, NVIDIA Corporation
+	Is Modded: Definitely; Client brand changed to 'forge,fml'
+	Type: Client (map_client.txt)
+	Texture Pack: Default
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: ~~ERROR~~ NullPointerException: null

@@ -88,10 +88,9 @@ public void init(FMLInitializationEvent event)
 	GameRegistry.registerBlock(NightshadeBlock);
 	GameRegistry.registerBlock(EmbershadeBlock);
 	
-	GameRegistry.addRecipe(new ItemStack(nightmareRealm.NightshadeSword, 1), new Object[] {" # ", "#E#", Character.valueOf('#'), nightmareRealm.NightshadeOre, Character.valueOf('E'),Item.swordDiamond});
-	GameRegistry.addRecipe(new ItemStack(nightmareRealm.SoulshadeSword, 1), new Object[] {" X ", "XIX", Character.valueOf('X'), nightmareRealm.SoulshadeOre, Character.valueOf('I'),Item.swordDiamond});
-	GameRegistry.addRecipe(new ItemStack(nightmareRealm.EmbershadeSword, 1), new Object[] {" X ", "XIX", Character.valueOf('X'), nightmareRealm.EmbershadeOre, Character.valueOf('I'),nightmareRealm.NightshadeSword});
-	GameRegistry.addRecipe(new ItemStack(nightmareRealm.EmbershadeSword, 1), new Object[] {" X ", "XIX", Character.valueOf('X'), nightmareRealm.EmbershadeOre, Character.valueOf('I'),nightmareRealm.SoulshadeSword});
+	GameRegistry.addRecipe(new ItemStack(nightmareRealm.NightshadeSword, 1), new Object[] {  "X", "X", "I", Character.valueOf('X'), nightmareRealm.NightshadeOre, Character.valueOf('I'),Item.stick});
+	GameRegistry.addRecipe(new ItemStack(nightmareRealm.SoulshadeSword, 1), new Object[] { "X", "X", "I", Character.valueOf('X'), nightmareRealm.SoulshadeOre, Character.valueOf('I'),Item.stick});
+	GameRegistry.addRecipe(new ItemStack(nightmareRealm.EmbershadeSword, 1), new Object[] { "X", "X", "I", Character.valueOf('X'), nightmareRealm.EmbershadeOre, Character.valueOf('I'),Item.stick});
 	
 	LanguageRegistry.addName(SoulshadeBlock, "oreSoulshade");
 	LanguageRegistry.addName(NightshadeBlock, "oreNightshade");
