@@ -1,0 +1,29 @@
+package nightmareRealm.client.core.blocks;
+
+import cpw.mods.fml.common.Side;
+import cpw.mods.fml.common.asm.SideOnly;
+import net.minecraft.src.Block;
+import net.minecraft.src.CreativeTabs;
+import net.minecraft.src.Material;
+import java.util.Random;
+
+public class BlockSoulshade extends Block
+{
+	public BlockSoulshade(int par1, int par2)
+	{
+	         super(par1, par2, Material.rock);
+	         this.setCreativeTab(CreativeTabs.tabBlock);
+	}
+	
+	@SideOnly(Side.CLIENT)
+	public String getTextureFile() 
+	{
+	    return "/nmGFX/blocks.png";
+	}
+	
+	  public int idDropped(int metadata, Random random)
+	  {
+	    return this.blockID;
+	  }
+
+}

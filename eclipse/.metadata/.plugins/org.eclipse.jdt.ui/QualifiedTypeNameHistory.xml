@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="net.minecraft.src.Block"/>
+<fullyQualifiedTypeName name="nightmareRealm.client.core.items.ItemSoulshadeOre"/>
+<fullyQualifiedTypeName name="java.net.Proxy"/>
+<fullyQualifiedTypeName name="java.net.Proxy.Type"/>
+<fullyQualifiedTypeName name="nightmareRealm.common.nightmareRealm"/>
+<fullyQualifiedTypeName name="net.minecraftforge.client.MinecraftForgeClient"/>
+<fullyQualifiedTypeName name="cpw.mods.fml.common.Mod.PreInit"/>
+<fullyQualifiedTypeName name="cpw.mods.fml.common.event.FMLPreInitializationEvent"/>
+<fullyQualifiedTypeName name="cpw.mods.fml.common.Mod.PostInit"/>
+<fullyQualifiedTypeName name="cpw.mods.fml.common.event.FMLPostInitializationEvent"/>
+<fullyQualifiedTypeName name="nightmareRealm.client.core.items.ItemNightshadeOre"/>
+<fullyQualifiedTypeName name="nightmareRealm.client.core.items.ItemEmbershadeOre"/>
+<fullyQualifiedTypeName name="net.minecraft.src.EnumToolMaterial"/>
+<fullyQualifiedTypeName name="nightmareRealm.client.core.items.ItemNightshadeSword"/>
+<fullyQualifiedTypeName name="net.minecraft.src.CreativeTabs"/>
+<fullyQualifiedTypeName name="nightmareRealm.client.core.items.ItemEmbershadeSword"/>
+<fullyQualifiedTypeName name="nightmareRealm.client.core.items.ItemSoulshadeSword"/>
+<fullyQualifiedTypeName name="net.minecraft.src.EntityLiving"/>
+<fullyQualifiedTypeName name="net.minecraft.src.PotionEffect"/>
+<fullyQualifiedTypeName name="net.minecraft.src.Potion"/>
+<fullyQualifiedTypeName name="net.minecraft.src.Entity"/>
+</qualifiedTypeNameHistroy>

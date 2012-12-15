@@ -1,0 +1,121 @@
+package nightmareRealm.common;
+
+import java.net.Proxy;
+
+import net.minecraft.src.Block;
+import net.minecraft.src.BlockHalfSlab;
+import net.minecraft.src.BlockStairs;
+import net.minecraft.src.BlockStep;
+import net.minecraft.src.BlockTorch;
+import net.minecraft.src.CreativeTabs;
+import net.minecraft.src.EnumArmorMaterial;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraft.src.EnumToolMaterial;
+import net.minecraft.src.Item;
+import net.minecraft.src.ItemStack;
+import net.minecraftforge.client.MinecraftForgeClient;
+import cpw.mods.fml.common.Mod;
+import net.minecraftforge.common.EnumHelper;
+import cpw.mods.fml.common.Mod.Init;
+import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.Mod.PostInit;
+import cpw.mods.fml.common.Mod.PreInit;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
+import cpw.mods.fml.common.network.NetworkMod.SidedPacketHandler;
+import cpw.mods.fml.common.SidedProxy; 
+import nightmareRealm.client.core.blocks.BlockEmberTorch;
+import nightmareRealm.client.core.handlers.ClientPacketHandler;
+import nightmareRealm.client.core.items.ItemEmbershadeOre;
+import nightmareRealm.client.core.items.ItemEmbershadeSword;
+import nightmareRealm.client.core.items.ItemNightshadeOre;
+import nightmareRealm.client.core.items.ItemNightshadeSword;
+import nightmareRealm.client.core.items.ItemSoulshadeOre;
+import nightmareRealm.client.core.items.ItemSoulshadeSword;
+import nightmareRealm.common.core.CommonProxy;
+import nightmareRealm.common.core.handlers.ServerPacketHandler;
+
+
+
+@Mod(modid = "Nightmare Realm", name = "Nightmare Realm", version = "1.0")
+@NetworkMod(clientSideRequired = true, serverSideRequired = false)
+public class nightmareRealm 
+{
+public static Item SoulshadeOre = new ItemSoulshadeOre(460,0);
+public static Item NightshadeOre = new ItemNightshadeOre(461,1);
+public static Item EmbershadeOre = new ItemEmbershadeOre(462,2);
+public static Block EmberTorch= new BlockEmberTorch(200, 6);
+public static Item NightshadeSword;
+public static Item SoulshadeSword;
+public static Item EmbershadeSword;
+static EnumToolMaterial soulshadeMaterial = EnumHelper.addToolMaterial("soulshadeMaterial", 3, 1561, 8F, 4, 24);
+static EnumToolMaterial nightshadeMaterial = EnumHelper.addToolMaterial("nightshadeMaterial", 3, 1561, 8F, 4, 28);
+static EnumToolMaterial embershadeMaterial = EnumHelper.addToolMaterial("embershadeMaterial", 3, 1561, 8F, 4, 32);
+
+@PreInit
+public void preInit(FMLPreInitializationEvent event) 
+{
+//loads before the mod
+	
+}
+
+
+@Init
+public void init(FMLInitializationEvent event)
+{
+//loads the mod
+	NightshadeSword = new ItemNightshadeSword(4001, nightshadeMaterial).setIconIndex(3).setItemName("Nightshade Sword");
+	SoulshadeSword = new ItemSoulshadeSword(4002, soulshadeMaterial).setIconIndex(4).setItemName("Soulshade Sword");
+	EmbershadeSword = new ItemEmbershadeSword(4003, embershadeMaterial).setIconIndex(5).setItemName("Embershade Sword");
+	EmberTorch = (new BlockEmberTorch(200, 6)).setHardness(0.0F).setLightValue(1.9375F).setStepSound(Block.soundWoodFootstep).setBlockName("Ember Torch").setRequiresSelfNotify();
+	
+	GameRegistry.registerBlock(EmberTorch);
+	
+	LanguageRegistry.addName(EmberTorch, "Ember Torch");
+	LanguageRegistry.addName(SoulshadeOre, "Soulshade");
+	LanguageRegistry.addName(NightshadeOre, "Nightshade");
+	LanguageRegistry.addName(EmbershadeOre, "Embershade");
+	LanguageRegistry.addName(NightshadeSword, "Nightshade Sword"); 
+	LanguageRegistry.addName(SoulshadeSword, "Soulshade Sword"); 
+	LanguageRegistry.addName(EmbershadeSword, "Embershade Sword"); 
+	MinecraftForgeClient.preloadTexture("/nmGFX/items.png");
+}
+
+@PostInit
+public void postInit(FMLPostInitializationEvent event) 
+{
+//loads after the mod
+}
+
+}
+
+/*@NetworkMod(clientSideRequired=true,serverSideRequired=true, //Whether client side and server side are needed
+clientPacketHandlerSpec = @SidedPacketHandler(channels = {"MineTechForge" }, packetHandler = ClientPacketHandler.class), //For clientside packet handling
+serverPacketHandlerSpec = @SidedPacketHandler(channels = {}, packetHandler = ServerPacketHandler.class)) //For serverside packet handling
+@Mod(modid="nightmareRealm",name="nightmareRealm",version="1.0") //Gives Forge extra info about your mod
+public class nightmareRealm 
+{ //The class file
+
+@Instance("nightmareRealm") //The instance, this is very important later on
+public static nightmareRealm instance = new nightmareRealm();
+
+
+@SidedProxy(clientSide = "nightmareRealm.client.core.ClientProxy", serverSide = "nightmareRealm.common.core.CommonProxy") //Tells Forge the location of your proxies
+public static CommonProxy proxy;
+
+@Init
+public void InitCobaltCraft(FMLInitializationEvent event)
+{ //Your main initialization method
+
+	NetworkRegistry.instance().registerGuiHandler(this, proxy); //Registers the class that deals with GUI data
+	LanguageRegistry.addName(SoulshadeOre, "Soulshade");
+	
+	proxy.addNames();
+}
+
+}*/

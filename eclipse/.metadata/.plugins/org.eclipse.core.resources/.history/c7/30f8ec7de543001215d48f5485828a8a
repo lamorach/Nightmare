@@ -1,0 +1,36 @@
+package oron45.nightmareRealm.common;
+
+import net.minecraft.src.Block;
+import net.minecraft.src.Item;
+import net.minecraft.src.ItemStack;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.Init;
+import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
+import cpw.mods.fml.common.network.NetworkMod.SidedPacketHandler;
+import cpw.mods.fml.common.SidedProxy;
+import oron45.nightmareRealm.client.core.handlers.ClientPacketHandler;
+import oron45.tutorial.common.core.CommonProxy;
+import oron45.tutorial.common.core.handlers.ServerPacketHandler;
+
+@NetworkMod(clientSideRequired=true,serverSideRequired=true, //Whether client side and server side are needed
+clientPacketHandlerSpec = @SidedPacketHandler(channels = {"MineTechForge" }, packetHandler = ClientPacketHandler.class), //For clientside packet handling
+serverPacketHandlerSpec = @SidedPacketHandler(channels = {}, packetHandler = ServerPacketHandler.class)) //For serverside packet handling
+@Mod(modid="DeverionXTutorial",name="DeverionXTutorial",version="1.0") //Gives Forge extra info about your mod
+public class TutorialMain { //The class file
+
+@Instance("DeverionXTutorial") //The instance, this is very important later on
+public static TutorialMain instance = new TutorialMain();
+
+@SidedProxy(clientSide = "deverionx.tutorial.client.core.ClientProxy", serverSide = "deverionx.tutorial.common.core.CommonProxy") //Tells Forge the location of your proxies
+public static CommonProxy proxy;
+
+@Init
+public void InitCobaltCraft(FMLInitializationEvent event){ //Your main initialization method
+
+NetworkRegistry.instance().registerGuiHandler(this, proxy); //Registers the class that deals with GUI data
+}

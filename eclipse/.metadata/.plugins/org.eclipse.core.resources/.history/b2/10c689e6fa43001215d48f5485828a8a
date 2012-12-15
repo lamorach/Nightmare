@@ -1,0 +1,5 @@
+package nightmareRealm.client.core.items;
+///from mining red
+public class ItemSoulshadeOre {
+
+}

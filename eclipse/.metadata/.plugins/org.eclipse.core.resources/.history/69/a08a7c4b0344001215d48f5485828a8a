@@ -1,0 +1,25 @@
+package nightmareRealm.client.core.items;
+
+import cpw.mods.fml.common.Side;
+import cpw.mods.fml.common.asm.SideOnly;
+import net.minecraft.src.CreativeTabs;
+import net.minecraft.src.Item;
+
+///from mining red
+public class ItemSoulshadeOre extends Item
+{
+	public ItemSoulshadeOre(int par1)
+	{
+		super(par1);
+		setTextureFile("nightmareRalmGFX/Items.png");
+		setItemName("SoulshadeOre");
+		setCreativeTab(CreativeTabs.tabMaterials);
+	}
+	
+	@SideOnly(Side.CLIENT)
+	public int getItemIconFromDamge(int i)
+	{
+		return 0;
+	}
+
+}
